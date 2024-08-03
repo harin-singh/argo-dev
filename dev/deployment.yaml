@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rs-argocd
+spec:
+  selector:
+    matchLabels:
+      app: rs-argocd
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: rs-argocd
+    spec:
+      containers:
+      - name: rs-argocd
+        image: harin-singh/argo-dev:1.2
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rapidscale-argo
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/harin-singh/argo-dev.git
+    targetRevision: HEAD
+    path: dev
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: rapidscale
+
+# have argo create the namespace if it doesn't exist
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+# enable automated sync ( default is manual )
+    automated:
+      selfHeal: true # automatic self-heal if the app is out of sync
+      prune: true # automatic deletion of resources that are not in the git repo
