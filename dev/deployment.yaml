@@ -32,11 +32,11 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
+  type: ClusterIP
 
 ---
 
-apiVersion: v1
-kind: apiVersion: v1
+apiVersion: apps/v1
 kind: ConfigMap
 metadata:
   name: myapp-config
