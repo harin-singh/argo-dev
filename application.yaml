@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/harin-singh/argo-dev.git
     targetRevision: HEAD
-    path: dev
+    path: dev/deployment.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: rapidscale
