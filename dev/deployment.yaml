@@ -34,12 +34,12 @@ spec:
     targetPort: 8080
   type: ClusterIP
 
----
+# ---
 
-apiVersion: apps/v1
-kind: ConfigMap
-metadata:
-  name: myapp-config
-data:
-  key: value
-  key2: value2
+# apiVersion: apps/v1
+# kind: ConfigMap
+# metadata:
+#   name: myapp-config
+# data:
+#   key: value
+#   key2: value2
