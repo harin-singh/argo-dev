@@ -18,28 +18,18 @@ spec:
         ports:
         - containerPort: 8080
 
----
+## create a service for the deployment
 
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: rs-argocd
-  namespace: rapidscale
-spec:
+  name: rs-svc-deployment
+spec: 
   selector:
     app: rs-argocd
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-  type: ClusterIP
-
-# ---
-
-# apiVersion: apps/v1
-# kind: ConfigMap
-# metadata:
-#   name: myapp-config
-# data:
-#   key: value
-#   key2: value2
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
