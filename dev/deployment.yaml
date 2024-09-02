@@ -17,8 +17,13 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 8080
-
-## create a service for the deployment
+        resources:
+          limits:
+            cpu: "1"
+            memory: "512Mi"
+          requests:
+            cpu: "0.5"
+            memory: "256Mi"
 
 # ---
 # apiVersion: v1
