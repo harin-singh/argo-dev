@@ -25,16 +25,16 @@ spec:
             cpu: "0.5"
             memory: "256Mi"
 
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: rs-svc-deployment
-# spec: 
-#   selector:
-#     app: rs-argocd
-#   ports:
-#     - protocol: TCP
-#       port: 80
-#       targetPort: 8080
-#   type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rs-svc-deployment
+spec: 
+  selector:
+    app: rs-argocd
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
