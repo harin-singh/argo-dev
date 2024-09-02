@@ -18,21 +18,21 @@ spec:
         ports:
         - containerPort: 8080
 
----
+# ---
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: rs-argocd
-  namespace: rapidscale
-spec:
-  selector:
-    app: rs-argocd
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-  type: ClusterIP
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: rs-argocd
+#   namespace: rapidscale
+# spec:
+#   selector:
+#     app: rs-argocd
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     targetPort: 8080
+#   type: ClusterIP
 
 # ---
 
